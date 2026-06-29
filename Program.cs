@@ -33,6 +33,12 @@ namespace AbstractFactory {
     }
   }
 
+  class LinuxButton : IButton {
+    public void Draw() {
+      Console.WriteLine("Кнопка Linux");
+    }
+  }
+
   class WindowsTextBox : ITextBox {
     public void Show() {
       Console.WriteLine("Поле Windows");
@@ -42,6 +48,7 @@ namespace AbstractFactory {
   interface MyGUIFactory {
     IText CreateNewText();
     IField CreateField();
+    IButton CreateButton();
   }
 
   // Интерфейс фабрики
@@ -69,6 +76,11 @@ namespace AbstractFactory {
     public IField CreateField() {
       return new DropDownField();
     }
+
+    public IButton CreateButton() {
+      return new LinuxButton();
+    }
+      
   }
 
   class Program {
