@@ -94,9 +94,11 @@ namespace AbstractFactory {
       //Task
       IText text = factory1.CreateNewText();
       IField field = factory1.CreateField();
+      IButton myButton = factory1.CreateButton();
 
       text.PrintText();
       field.ShowField();
+      myButton.Draw();
 
       button.Draw();
       textBox.Show();
